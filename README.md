@@ -1,27 +1,37 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Простые проекты на React и TypeScript
 
-Currently, two official plugins are available:
+Данный репозиторий содержит 12 простых проектов на React и TypeScript. Каждый проект находится в своей отдельной ветке, чтобы облегчить навигацию и изучение кода. Ниже вы найдете описание каждого из проектов и ссылки на соответствующие ветки.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Проекты
 
-## Expanding the ESLint configuration
+1. **Проект 1: Название проекта 1**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   - Описание: Краткое описание первого проекта.
+   - Ветка: [users](https://github.com/zhebarov-m/react_12-simple-projects)
+2. **Проект 2: Название проекта 2**
 
-- Configure the top-level `parserOptions` property like this:
+   - Описание: Краткое описание второго проекта.
+   - Ветка: [project-2](https://github.com/ваш-профиль/ваш-репозиторий/tree/project-2)
+3. **Проект 3: Название проекта 3**
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+   - Описание: Краткое описание третьего проекта.
+   - Ветка: [project-3](https://github.com/ваш-профиль/ваш-репозиторий/tree/project-3)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+...
+
+12. **Проект 12: Название проекта 12**
+    - Описание: Краткое описание двенадцатого проекта.
+    - Ветка: [project-12](https://github.com/ваш-профиль/ваш-репозиторий/tree/project-12)
+
+## Запуск проектов
+
+Для запуска каждого из проектов, перейдите на соответствующую ветку и следуйте инструкциям в README файле проекта.
+
+## Лицензия
+
+Этот репозиторий распространяется под лицензией [MIT](LICENSE).
+
+---
+
+**Заметка**: Этот README является образцовым и может быть адаптирован к вашим конкретным проектам и веткам. Замените "Название проекта" и "Краткое описание" на соответствующие названия и описания ваших проектов.
