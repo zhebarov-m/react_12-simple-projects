@@ -1,11 +1,14 @@
 import { FC } from "react";
-import { tUsersData } from ".";
+import { tUsersData } from "../../App";
+
 
 interface iUserProps {
   userData: tUsersData
+  isInvited: boolean
+  onClickInvites: (id: number) => void
 }
 
-export const User:FC<iUserProps> = ({userData}) => (
+export const User:FC<iUserProps> = ({userData, onClickInvites, isInvited}) => (
   <li>
     <div>
       <img className="avatar" src={userData.avatar} alt="User" />
@@ -19,6 +22,6 @@ export const User:FC<iUserProps> = ({userData}) => (
         </p>
       </div>
     </div>
-    <img className="action" src="/assets/plus.svg" alt="Action" />
+    <img onClick={() => onClickInvites(userData.id)} className="action" src={`/assets/${isInvited ? 'minus' : 'plus'}.svg`} alt="Action" />
   </li>
 );

@@ -1,24 +1,27 @@
 import { FC } from "react";
 import { Skeleton } from "./Skeleton";
 import { User } from "./User";
-
-export type tUsersData = {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-};
+import { tUsersData } from "../../App";
 
 interface iUsersProps {
   items: tUsersData[];
   isLoading: boolean;
   searchValue: string;
   onChangeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  invites: number[];
+  onClickInvites: (id: number) => void;
 }
 
 export const Users: FC<iUsersProps> = (props) => {
-  const { items, isLoading, searchValue, onChangeValue } = props;
+  const {
+    items,
+    isLoading,
+    searchValue,
+    onChangeValue,
+    invites,
+    onClickInvites,
+  } = props;
+
   return (
     <>
       <div className="search">
@@ -32,6 +35,7 @@ export const Users: FC<iUsersProps> = (props) => {
           placeholder="Найти пользователя..."
         />
       </div>
+      
       {isLoading ? (
         <div className="skeleton-list">
           <Skeleton />
@@ -46,7 +50,12 @@ export const Users: FC<iUsersProps> = (props) => {
               return fullName.toLowerCase().includes(searchValue.toLowerCase());
             })
             .map((item) => (
-              <User key={item.id} userData={item} />
+              <User
+                onClickInvites={onClickInvites}
+                isInvited={invites.includes(item.id)}
+                key={item.id}
+                userData={item}
+              />
             ))}
         </ul>
       )}

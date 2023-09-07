@@ -4,15 +4,32 @@ import { Users } from "./components/Users";
 import axios from "axios";
 
 // Тут список пользователей: https://reqres.in/api/users
+export type tUsersData = {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+};
 
 const App: FC = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<tUsersData[]>([]);
   const [isLoading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
-  const [invites, setInvites] = useState([]);
+  const [invites, setInvites] = useState<number[]>([]);
+  console.log(invites);
+  
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
+  };
+
+  const onClickInvites = (id: number) => {
+    if (invites.includes(id)) {
+      setInvites((prev) => prev.filter((_id) => _id !== id));
+    } else {
+      setInvites((prev) => [...prev, id]);
+    }
   };
 
   useEffect(() => {
@@ -36,6 +53,8 @@ const App: FC = () => {
         onChangeValue={handleChangeInput}
         items={users}
         isLoading={isLoading}
+        invites={invites}
+        onClickInvites={onClickInvites}
       />
       {/* <Success /> */}
     </div>
